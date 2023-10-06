@@ -79,19 +79,37 @@ function UserOne({ gnNo }) {
                                             <Row className='w-100'>
                                                 <Col lg={4} sm={4} md={12} xl={4}>
                                                     <Form.Group className="mb-3">
-                                                        <Form.Control type="text" name='fname' placeholder="Enter First User Name" required />
+                                                        <Form.Control type="text" name='fname' placeholder="Enter First User Name" pattern="[A-Za-z]+" required />
                                                     </Form.Group>
                                                 </Col>
                                                 <Col lg={4} sm={4} md={12} xl={4}>
                                                     <Form.Group className="mb-3">
-                                                        <Form.Control type="text" name='sname' placeholder="Enter Second User Name" required />
+                                                        <Form.Control type="text" name='sname' placeholder="Enter Second User Name" pattern="[A-Za-z]+" required />
                                                     </Form.Group>
                                                 </Col>
                                                 <Col lg={4} sm={4} md={12} xl={4}>
                                                     <Form.Group className="mb-3">
-                                                        <Form.Control type="text" name='range' placeholder="Please Set Point Range" required />
+                                                        <Form.Control type="number" name='range' placeholder="Please Set Point Range" min="1"  max="10" required />
                                                     </Form.Group>
                                                 </Col>
+                                                <Col lg={12} sm={12} md={12} xl={12} className="">
+                                                    <div className='p-4'>
+                                                        <h1 className='text-center pb-4'>Terms And Conditions</h1>
+                                                        <ul>
+                                                            <li>Every 10 Sec, The System will generate Number simultaneously </li>
+                                                            <li>Allowing Two users to participate</li>
+                                                            <li>Users have the set Point range  of up to 10 Point</li>
+                                                            <li>If any user has the same number system generated will be reward One Point.</li>
+                                                            <li>The User who reaches their Point range first Will be declared the winner.</li>
+                                                        </ul>
+                                                        <Col lg={12} sm={12} md={12} xl={12}>
+                                                            <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                                                                <Form.Check type="checkbox" label="I agree" required />
+                                                            </Form.Group>
+                                                        </Col>
+                                                    </div>
+                                                </Col>
+
                                             </Row>
                                         </div>
                                         <Button type='submit' className='btn btn-secondary w-100'>Submit</Button>
@@ -117,7 +135,7 @@ function UserOne({ gnNo }) {
                                 </Card>
                             </Col>
                             <Col lg={6} sm={6} md={6} xl={6}>
-                                <Card className='d-flex justify-content-center align-items-center' style={{height:"300px"}}>
+                                <Card className='d-flex justify-content-center align-items-center' style={{ height: "300px" }}>
                                     <Card.Body>
                                         <div>
                                             <h1>{fName}:{firstpoint + 0}</h1>
@@ -128,7 +146,7 @@ function UserOne({ gnNo }) {
                                 </Card>
                             </Col>
                             <Col lg={6} sm={6} md={6} xl={6} >
-                                <Card className='d-flex justify-content-center align-items-center' style={{height:"300px"}}>
+                                <Card className='d-flex justify-content-center align-items-center' style={{ height: "300px" }}>
                                     <Card.Body>
                                         <div>
                                             <h1>{sName}:{secPoint + 0}</h1>
